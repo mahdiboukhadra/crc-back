@@ -21,5 +21,4 @@ def lambda_handler(event, context):
         'views':views
     }
 )
-    
     return views
