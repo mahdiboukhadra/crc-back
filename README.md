@@ -6,7 +6,14 @@ Frontend: [crc-front](https://github.com/mahdiboukhadra/crc-front)
 
 ## What it does
 
-`visitsUpdater` — [1-2 sentence description of what this actually does: e.g. "Python function that increments and returns a visit count, backed by DynamoDB, exposed via API Gateway/Lambda, called from the frontend on page load."]
+`visitsUpdater` is a Python AWS Lambda function that increments and returns a visitor count on each page load. The count is stored in DynamoDB, with the Lambda function handling the read/increment/write logic. The function is invoked via API Gateway, called directly from the frontend.
+
+## Architecture
+
+- **Compute:** AWS Lambda (Python)
+- **Storage:** DynamoDB — stores and persists the visit count
+- **API:** Exposed via API Gateway, called from the frontend on page load
+- **IAM:** Scoped IAM role/permissions for Lambda to read/write to DynamoDB
 
 ## Notes
 
